@@ -1,0 +1,386 @@
+/**
+ * PrestaShop module created by VEKIA, a guy from official PrestaShop community ;-)
+ *
+ * @author    VEKIA https://www.prestashop.com/forums/user/132608-vekia/
+ * @copyright 2010-9999 VEKIA
+ * @license   This program is not free software and you can't resell and redistribute it
+ *
+ * CONTACT WITH DEVELOPER http://mypresta.eu
+ * support@mypresta.eu
+ */
+
+/*#ct_matrix .ctp_checked {
+    background: #F8FCC9;
+}
+
+#ct_matrix .ctp_checked:hover {
+    background: #F0F5BD !important;
+}
+
+#add_to_cart_bulk {
+    clear: both;
+    overflow: hidden;
+    float: right;
+    display: inline-block;
+}
+
+#add_to_cart_bulk button {
+    float: right;
+}
+
+#ct_matrix thead th {
+    padding-right: 14px;
+    margin-right: 5px;
+    background: url('../img/sortOff.gif') right 2px center no-repeat;
+}
+
+#ct_matrix thead th.tablesorter-headerAsc {
+    background: url('../img/sortUp.gif') right 2px center no-repeat;
+}
+
+#ct_matrix thead th.tablesorter-headerDesc {
+    background: url('../img/sortDown.gif') right 2px center no-repeat;
+}
+
+#ct_matrix thead th.nosort {
+    background: none !important;
+    padding: 5px !important;
+    margin-right: 0px !important;
+    cursor: default !important;
+}
+
+#ct_matrix thead {
+    cursor: pointer;
+}
+
+#ct_matrix thead.nosort {
+    cursor: default;
+}
+
+#ct_matrix thead.nosort th {
+    background: none !important;
+    padding: 5px !important;
+    margin-right: 0px !important;
+    cursor: default !important;
+}
+
+#ct_matrix {
+    background:#FFF;
+}
+
+#ct_matrix {
+    width: 100%;
+    border-spacing: 2px;
+    border-collapse: separate;
+    font-size: 12px;
+}
+
+#ct_matrix tr.ct_matrix_row:hover {
+    background: #f1f1f1;
+}
+
+#ct_matrix tr.ct_matrix_row:hover td {
+    border: 1px solid #f2f2f2;
+}
+
+#ct_matrix .ct_matrix_head {
+    font-weight: bold;
+    text-shadow: 1px 1px 0px #FFF;
+    background: #ffffff; !* Old browsers *!
+    background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); !* FF3.6+ *!
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #e5e5e5)); !* Chrome,Safari4+ *!
+    background: -webkit-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); !* Chrome10+,Safari5.1+ *!
+    background: -o-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); !* Opera 11.10+ *!
+    background: -ms-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); !* IE10+ *!
+    background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%); !* W3C *!
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e5e5e5', GradientType=0); !* IE6-9 *!
+}
+
+#ct_matrix .volume_discount {
+    display:block;
+    clear:both;
+    margin-bottom:5px;
+}
+
+#ct_matrix td, #ct_matrix th {
+    padding: 5px;
+    border: 1px solid #f1f2f4;
+    text-align: center;
+}
+
+#ct_matrix .qty {
+    padding: 1px;
+    margin: 0px;
+    border: 1px solid #c0c0c0;
+    font-size: 11px;
+    text-align: center;
+    border-left: none;
+    border-right: none;
+    width: 30px;
+    top: 1px;
+    position: relative;
+    margin-bottom:10px;
+}
+
+#ct_matrix .ct_submit {
+    padding: 1px 5px 2px 5px;
+    cursor: pointer;
+    !* top: 1px; *!
+    !* position: relative; *!
+}
+
+#ct_matrix .ct_submit_nostock {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.bulk_option_add_to_cart {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.bulk_option_add_to_cart p {
+    display: block;
+    clear: both;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+.bulk_option_add_to_cart .buttons_bottom_block {
+    padding: 0px;
+}
+
+.increase_quantity, .decrease_quantity {
+    cursor: pointer;
+}
+
+.ctd_price {
+    font-size: 12px;
+}
+
+.ctd_price strike {
+    color: #c0c0c0;
+}
+
+.combinations_tab_price {
+    text-align:right;
+    margin-left:10px;
+    display:block;
+    float:right;
+}
+
+.combinations_tab_price img {
+    height:20px; width:auto;
+}
+.colormobile {
+    display:none;
+}
+
+
+
+.ct_submit .material-icons {
+    font-size:17px;
+    padding:0px;
+    margin-right:2px;
+    position:relative;
+    top:-1px;
+}
+
+.pagination_show {
+    display:table-row!important;
+}
+
+.pagination_hide {
+    display:none!important;
+}
+
+nav.ct_pagination {
+    margin:0px;
+}
+
+@media (max-width: 768px) {
+    .colormobile {
+        display:block!important;
+    }
+    table#ct_matrix tbody, table#ct_matrix {
+        display: block!important;
+        width:100%;
+    }
+
+    table#ct_matrix th {
+        display:none;
+    }
+
+    table#ct_matrix tr {
+        margin-bottom:40px;
+        border-top:5px solid #cecece;
+        border-bottom:5px solid #cecece;
+        border-radius:5px;
+    }
+    table#ct_matrix tr, table#ct_matrix td {
+        display:block;
+        clear:both;
+        width:100%!important;
+    }
+    table#ct_matrix td {
+        border-top:1px;
+    }
+
+    table#ct_matrix td:before {
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+
+    table#ct_matrix td:before {
+        width:40%;
+        text-align:right;
+        display: block;
+        height: 100%;
+    }
+
+    table#ct_matrix .ctd_image::before{
+        display:none!important;
+    }
+
+    #ct_matrix tr.ct_matrix_row:hover td, #ct_matrix td, #ct_matrix th {
+        padding: 5px;
+        border:0px;
+        border-left: 1px solid #f1f2f4;
+        border-right: 1px solid #f1f2f4;
+        border-bottom: 1px solid #f1f2f4;
+        text-align: center;
+    }
+    #ct_matrix tr.ct_matrix_row:hover {
+        background: none;
+    }
+    .pagination_show {
+        display:block!important;
+    }
+
+    .pagination_hide {
+        display:none!important;
+    }
+}*/
+
+table#ct_matrix{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-size: 9pt;
+}
+#ct_matrix thead th, #ct_matrix tbody td {
+    text-align: center;
+}
+
+#ct_matrix thead th.nosort {
+    padding-right: 14px;
+    margin-right: 5px;
+    background: url('../img/sortOff.gif') right 2px center no-repeat;
+}
+
+#ct_matrix thead th.tablesorter-headerAsc {
+    background: url('../img/sortUp.gif') right 2px center no-repeat;
+}
+
+#ct_matrix thead th.tablesorter-headerDesc {
+    background: url('../img/sortDown.gif') right 2px center no-repeat;
+}
+#ct_matrix th{
+    font-size: 11px;
+    text-align: left;
+    font-weight: bold;
+    color: #4a4a4a;
+}
+
+
+#ct_matrix tbody tr:nth-child(odd) {
+    background-color: #ebebeb;
+}
+/* REMOVE SORTING */
+#ct_matrix thead th.nosort {
+    background: none !important;
+    padding: 5px !important;
+    margin-right: 0px !important;
+    cursor: default !important;
+}
+
+#ct_matrix thead {
+    cursor: pointer;
+}
+
+#ct_matrix thead.nosort {
+    cursor: default;
+}
+
+#ct_matrix thead.nosort th {
+    background: none !important;
+    padding: 5px !important;
+    margin-right: 0px !important;
+    cursor: default !important;
+}
+/* REMOVE SORTING */
+
+
+.pagination_show {
+    display:table-row!important;
+}
+
+.pagination_hide {
+    display:none!important;
+}
+
+nav.ct_pagination {
+    margin:0px;
+}
+
+/* MEDIA 768px */
+@media (max-width: 768px) {
+    .pagination_show {
+        display: block !important;
+    }
+
+    .pagination_hide {
+        display: none !important;
+    }
+}
+/* MEDIA 768px */
+
+
+#ct_matrix tr.ct_matrix_row:hover {
+    background: #d1d1d1;
+}
+
+#ct_matrix td:nth-child(2) {
+    width: 16%;
+}
+#ct_matrix td:nth-child(3) {
+    width: 9%;
+}
+#ct_matrix td:nth-child(4) {
+    width: 9%;
+}
+#ct_matrix td:nth-child(5) {
+    width: 9%;
+}
+#ct_matrix td:nth-child(6) {
+    width: 9%;
+}
+#ct_matrix td:nth-child(7) {
+    width: 9%;
+}
+#ct_matrix td:nth-child(8) {
+    width: 7%;
+}
+#ct_matrix td:nth-child(9) {
+    width: 10%;
+}
+#ct_matrix td:nth-child(10) {
+    width: 10%;
+}
+#ct_matrix td:nth-child(11) {
+    width: 10%;
+}

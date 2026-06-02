@@ -1,0 +1,63 @@
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/storage/framework/sessions/*
+/storage/logs/*
+!/storage/logs/.gitignore
+.env
+.env.*
+!.env.example
+.phpunit.result.cache
+docker-compose.override.yml
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+/xml/
+/public/img/
+/public/images/
+/.idea/
+/resources/views/pages/*
+/app/Http/Controllers/HomeController2.php
+/resources/views/testing33.blade.php
+/resources/views/pages/
+
+# Runtime / cache
+/var/
+*.log
+worker.log
+debug-*.log
+
+# Secrets and dumps
+db_access.txt
+*.sql
+
+# Local data and backups
+_analog_*
+_brand_tiers.json
+_clients_*.csv
+_tmp_*
+*.save
+*.bak
+*backup*
+*clone*
+*Controller2.php
+composer1.json
+composer1.lock
+
+# Large sync / export artifacts
+/public/starco.sync.xml
+/public/*.xml
+/rz.auto.xml
+/starco.sync.xml
+/rg_xml.txt
+*.xlsx
+*.xls
+*.csv
+!database/**/*.csv
+
+# IDE
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/jsLibraryMappings.xml

@@ -1,0 +1,78 @@
+.slider{
+	margin:0 auto;
+	position: relative;
+	max-width: 1170px;
+	max-height: 600px;
+	margin-top:0px;
+}
+.slider>img{
+	position: absolute;
+	left:25%;
+	/*top:30%; */
+	top: 24%;
+	width:50%;
+	height:80%;
+	transition: transform .5s;
+	transform: translate(-25%,-25%)scale(1);
+
+	z-index: 0;
+
+	border-radius: 4px;
+    border: 5px #fff solid;
+}
+.slider>img.left , .slider>img.center , .slider>img.right{
+	display:inline-block;
+	opacity: 1;
+}
+.slider>img.left{
+	transform: translate(-50%,-25%);
+	z-index: 1;
+}
+.slider>img.center{
+	z-index: 2;
+	transform:translate(0%,-25%) scale(1.1);
+}
+.slider>img.right{
+	transform: translate(50%,-25%);
+	z-index: 1;
+}
+.slider>.navContainer{
+	    width: 49%;
+    height: 100%;
+    position: absolute;
+    display: inline-block;
+    z-index: 5;
+    top: 0px;
+    left: 0px;
+}
+.slider>.navContainer.right{
+	    width: 49%;
+    height: 100%;
+    position: absolute;
+    display: inline-block;
+    z-index: 5;
+    top: 0px;
+    right: 0px;
+	left:auto;
+}
+
+
+.slider>.navContainer>.leftClass,.slider>.navContainer>.rightClass{
+	height: 100%;
+	width:28px;
+	background: url(../images/slider-arrow.png) no-repeat center;
+	background-position-x:0;
+	position: absolute;
+	opcity:0.6;
+	top:0px;
+
+}
+.slider>.navContainer>.rightClass{
+	    left: 50%;
+    background-position-x: -30px;
+		margin-left:-20px;
+}
+.slider>.navContainer>.leftClass{
+	right:50%;
+	margin-right:-20px;
+}

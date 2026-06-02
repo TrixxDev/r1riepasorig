@@ -1,0 +1,92 @@
+@extends('layouts.app')
+
+@section('body-title', 'cms')
+@section('title', 'lang-' . app()->getLocale() . ' country-' . app()->getLocale() . ' layout-right-column page-cms tax-display-enabled cms-id-9')
+
+@section('content')
+
+    <div class="container">
+        <div class="row">
+            <div class="main-content clearfix col-md-12 col-xl-10">
+                <div id="content-wrapper" class="right-column col-lg-12">
+                    <section id="main">
+                        <header class="page-header">
+                            <h1>
+                                Kondicionieru uzpilde
+                            </h1>
+                        </header>
+                        <section id="content" class="page-content page-cms page-cms-9">
+                            <p class="overflow-image"><img src="{{ asset('img/cms/kond_liel.jpg') }}" alt="" width="707" height="215"></p>
+                            <p>Parūpēsimies par vēsu gaisu Jūsu automašīnā. <br> Piezvanīt un pieteikt vizīti kondicioniera diagnostikai/uzpildei vai remonatam var pa tālruņa Nr.:<br> 67910555, R1 Ulbroka, Institūta iela 1,<br> 67615615, R1 Rīgā, Kalnciema ielā 39.</p>
+                            <h4><b>Visērtāk pierakstīties <a href="/content/7-calendar">E-Pierakstā </a><br> Kondicionieru apkope, diagnostika, uzpilde:</b></h4>
+                            <ul>
+                                <li>Kondicionieru apkope + diagnostika - 15.00 EUR</li>
+                                <li>Kondicionieru uzpilde - 20.00 EUR</li>
+                            </ul>
+                            <h4>AUTO KONDICIONIERU APKOPE, DIAGNOSTIKA, UZPILDE, REMONTS</h4>
+                            <p>Kā izskatās kondicioniera sistēma un kā tā strādā? Zemāk redzama uzskatāma shēma - kur, kas un kā atrodas gaisa kondicionētāja sistēmā.</p>
+                            <p class="overflow-image"><img src="{{ asset('img/cms/kond_1_707.jpg') }}" alt="" width="707" height="398"></p>
+                            <p><b>Kas ietilpst kondicionieru sistēmas apkopē-diagnostikā ?</b></p>
+                            <ul>
+                                <li>*kompresora darbspējas pārbaude,</li>
+                                <li>*Iztvaicētāja un kondensatora ventilatoru darbības pārbaude,</li>
+                                <li>*kondicioniera sistēmas gāzes daudzuma pārbaude,</li>
+                                <li>*auto salonā ienākošās gaisa plūsmas temperatūras pārbaude,</li>
+                                <li>*kondicioniera sistēmas hermētiskuma pārbaude ar vakuumu,</li>
+                                <li>*vecās eļļas, šķidrumu un kondensāta atsūknēšana no sistēmas.</li>
+                            </ul>
+                            <p><b>Kāpēc nepieciešama sistēmas apkope-diagnostika?</b></p>
+                            <ul>
+                                <li>Kondicioniera sistēma pastāvīgi tiek pakļauta dažādiem faktoriem:</li>
+                                <li>*šķidruma iztvaikošana automašīnas darbības laikā,</li>
+                                <li>*pastāvīga vibrācija,</li>
+                                <li>*temperatūras izmaiņas.</li>
+                                <li>Šie ir galvenie faktori, kāpēc rodas noplūde sistēmā.</li>
+                            </ul>
+                            <p><b>Cik bieži veikt apkopi-diagnostiku?</b></p>
+                            <p>Jaunai automašīnai diagnostiku iesaka veikt ik pēc 2-3 gadiem. Automašīnai, kuras gaisa kondicionēšanas sistēma darbojas normāli, bet ir vecāka par 7 gadiem, kondicioniera pārbaudi vēlams veikt reizi gadā.</p>
+                            <p><b>Kāda gāze nepieciešama jūsu auto ?</b></p>
+                            <p>Senākos laikos automašīnu kondicionieru iekārtās tika pildīta vecā tipa gāze «R12», kas modernākās automašīnās vairs nav izmantojama. Mūsdienās tiek izmantota jauna tipa gāze «R134a». No 2011. gada 1. janvāra visus, no jauna izstrādātos automobiļus, kuri pakļauti ES (EKK) tiesību aktiem, aprīko ar sistēmu, kura izmanto dzesētājvielu R1234yf AC sistēmā. Atšķirības ir ne tikai gāzu saturā un funkcionalitātē, bet arī visā kondicioniera sistēmā, tādēļ sistēmā var iepildīt tikai vienu no šīm gāzēm, to, kas tai paredzēta. Jaunā gāze, kas atstāj mazāku iespaidu uz apkārtējo vidi, pakāpeniski nomainīs gāzi R134a, kuru līdz 2017. gadam drīkstēs izmanot automobiļos, kuri izstrādāti līdz 2011. gadam. Jārēķinās ar to, ka jaunā gāze būs arī dārgāka par iepriekš izmantotajām.</p>
+                            <p><b>Kā notiek kondicioniera uzpilde ?</b></p>
+                            <ul>
+                                <li>*no sistēmas tiek izsūknēts gāzes, eļļas un kondensāta atlikums,</li>
+                                <li>*sistēmā tiek izveidots vakuums, kas ļauj pārbaudīt tās hermētiskumu,</li>
+                                <li>*sistēma tiek atbrīvota no mitruma un dažādiem piemaisījumiem,</li>
+                                <li>* kondicioniera sistēmu uzpilda ar ražotāja noteikto gāzes daudzumu, kā arī speciālu eļļu un ultravioleto piemaisījumu.</li>
+                            </ul>
+                            <p>UV piemaisījums palīdz noskaidrot noplūdes vietu, gadījumos, ja sistēma nav pietiekami hermētiska.</p>
+                            <p class="overflow-image"><img src="{{ asset('img/cms/IMG_7726_707.jpg') }}" alt="" width="707" height="531"></p>
+                            <p><b>Cik daudz gāzes ir nepieciešams kondicioniera sistēmai?</b></p>
+                            <p>Pēc auto parametriem tiek noteikts kondicioniera sistēmas gāzes daudzums gramos. To var noskaidrot auto apkopes grāmatiņā vai uzlīmē zem motora pārsega.</p>
+                            <p><img src="{{ asset('img/cms/kond_2_350.jpg') }}" alt="" width="350" height="263"><img src="{{ asset('img/cms/kond_3_350.jpg') }}" alt="" width="350" height="263"></p>
+                            <p><b>Kādu gāzi jāizmanto sistēmas uzpildei?</b></p>
+                            <p>Kondicioniera sistēmai jāizmanto automašīnas ražotāja noteikto gāzes tipu. Senākos laikos tika pildīta vecā tipa gāze „R12”, kas mūsdienu automašīnās nav izmantojama. Šobrīd tiek izmantota jaunā tipa gāze „R134a”. No 2011. gada 1.janvāra ražotajos automobiļos izmanto dzesētājvielu „R1234yf”. Atšķirības ir ne tikai gāzu saturā un funkcionalitātē, bet arī visā kondicioniera sistēmā. Tādēļ svarīgi sistēmā pildīt gāz1, kas tai paredzēta.</p>
+                            <p><b>Biežāk sastopamie defekti gaisa kondicionēšanas sistēmā.</b></p>
+                            <ul>
+                                <li>*savienojumu bojājums,</li>
+                                <li>*mehāniski bojājumi caurulēs vai radiatorā, korozija,</li>
+                                <li>*plaisas gumijas savienojumos,</li>
+                                <li>*ventīļa defekts,</li>
+                                <li>*ļoti netīrs salona filtrs,</li>
+                                <li>*bojājums elektrosistēmā.</li>
+                            </ul>
+                            <p>Tāpēc pirms auto gaisa kondicioniera sistēmas uzpildes nepieciešama diagnostika.</p>
+                            <p><b>R1 iesaka :</b></p>
+                            <p>*pārbaudiet temperatūru, kādu kondicionieris pūš salonā</p>
+                            <p class="overflow-image"><img src="{{ asset('img/cms/Temper_700.jpg') }}" alt="" width="700" height="525"></p>
+                            <p>*pārliecinieties, vai salona gaisa filtrs ir tīrs - pie mums to varat nopirkt un nomainīt.</p>
+                            <p><img src="{{ asset('img/cms/Filtri_2_350.jpg') }}" alt="" width="350" height="313"><img src="{{ asset('img/cms/Filtri_350.jpg') }}" alt="" width="350" height="297"></p>
+                            <p><b>R1</b> servisā <b>Ulbrokā</b> tiek veikta auto kondicionēšanas sistēmas apkope, diagnostika un uzpilde. <br><b>R1</b> servisā <b>Rīgā</b>, Kalnciema ielā 39 tiek veikta auto kondicionēšanas sistēmas apkope, diagnostika, uzpilde un remonts.</p>
+                            <p></p>
+                        </section>
+                        <footer class="page-footer">
+                            <!-- Footer content -->
+                        </footer>
+                    </section>
+                </div>
+            </div>
+            @include('components.right-sidebar')
+        </div>
+    </div>
+
+@endsection
