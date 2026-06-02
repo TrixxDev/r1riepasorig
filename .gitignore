@@ -30,6 +30,9 @@ yarn-error.log
 worker.log
 debug-*.log
 
+/scripts/
+/tools/
+
 # Secrets and dumps
 db_access.txt
 *.sql

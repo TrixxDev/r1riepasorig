@@ -5,7 +5,6 @@ namespace App\Providers;
 use App\Models\Bannerimage;
 use App\Services\CartService;
 use App\Services\SiteSeasonService;
-use App\Support\AgentDebugLog;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Arr;
@@ -39,91 +38,35 @@ class AppServiceProvider extends ServiceProvider
     {
         Auth::guard('web')->setRememberDuration((int) config('auth.remember_minutes', 525600));
 
-        $bootT0 = microtime(true);
-        $this->registerSlowQueryListener();
-
-        $t = microtime(true);
         $this->registerAuditConstants();
         $this->registerAppConstants();
-        AgentDebugLog::write('A', 'AppServiceProvider.php:boot', 'boot_constants_ms', [
-            'ms' => (int) round((microtime(true) - $t) * 1000),
-        ]);
 
-        $t = microtime(true);
         try {
             $banners = $this->getSharedBanners();
         } catch (\Throwable $e) {
             report($e);
             $banners = collect();
         }
-        AgentDebugLog::write('A', 'AppServiceProvider.php:boot', 'boot_banners_ms', [
-            'ms' => (int) round((microtime(true) - $t) * 1000),
-            'count' => is_countable($banners) ? count($banners) : null,
-            'cache_hit' => Cache::has(self::BANNERS_CACHE_KEY),
-        ]);
         View::share('banners', $banners);
 
-        $t = microtime(true);
         try {
             $this->hydrateCartConfigFromCache();
         } catch (\Throwable $e) {
             report($e);
         }
-        AgentDebugLog::write('A', 'AppServiceProvider.php:boot', 'boot_cart_config_ms', [
-            'ms' => (int) round((microtime(true) - $t) * 1000),
-            'cache_hit' => Cache::has(self::CART_CONFIG_CACHE_KEY),
-        ]);
 
-        $t = microtime(true);
         try {
             $this->hydrateSiteSeason();
         } catch (\Throwable $e) {
             report($e);
             Config::set('site.season', (int) config('site.default_season', SiteSeasonService::WINTER));
         }
-        AgentDebugLog::write('A', 'AppServiceProvider.php:boot', 'boot_site_season_ms', [
-            'ms' => (int) round((microtime(true) - $t) * 1000),
-            'cache_hit' => Cache::has(SiteSeasonService::CACHE_KEY),
-        ]);
 
         $this->registerBuilderMacros();
         $this->registerPaginatorDefaults();
         $this->registerClientIpConstant();
         $this->queuePersistentSessionCookie();
         $this->registerCartCountViewComposer();
-
-        AgentDebugLog::write('A', 'AppServiceProvider.php:boot', 'boot_total_ms', [
-            'ms' => (int) round((microtime(true) - $bootT0) * 1000),
-            'cache_driver' => config('cache.default'),
-        ]);
-    }
-
-    protected function registerSlowQueryListener(): void
-    {
-        DB::listen(function ($query) {
-            try {
-                $req = request();
-                if ($req && ! $req->attributes->get('_agent_first_query_logged')) {
-                    $req->attributes->set('_agent_first_query_logged', true);
-                    AgentDebugLog::write('F', 'AppServiceProvider.php:db_listen', 'first_query', [
-                        'ms' => (int) round($query->time),
-                        'sql_prefix' => substr(preg_replace('/\s+/', ' ', $query->sql), 0, 80),
-                    ]);
-                }
-            } catch (\Throwable $e) {
-                // ignore
-            }
-
-            $ms = $query->time;
-            if ($ms < 500) {
-                return;
-            }
-            $sql = preg_replace('/\s+/', ' ', $query->sql);
-            AgentDebugLog::write('C', 'AppServiceProvider.php:db_listen', 'slow_query', [
-                'ms' => (int) round($ms),
-                'sql_prefix' => substr($sql, 0, 120),
-            ]);
-        });
     }
 
     protected function registerAuditConstants(): void

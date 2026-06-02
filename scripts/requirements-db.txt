@@ -1,2 +1,0 @@
-# pip install -r requirements-db.txt
-pymysql>=1.1.0
